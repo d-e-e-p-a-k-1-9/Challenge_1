@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Challenge 1</title>
+
+  
+  <style>
+      body{
+        padding: 0;
+        margin: 0;
+        background-image: url("./images/bg-intro-desktop.png");
+        background-color: hsl(0, 100%, 74%);
+        font-family: 'Poppins', sans-serif;
+        color: white;
+        background-blend-mode: screen;
+        align-items: center;
+        justify-content: center;
+      }
+
+     form input:focus{
+        border:1px solid blueviolet;
+      }
+
+     
+     
+     a:active{
+       background-color: hsl(154, 34%, 65%);
+     }
+
+     
+     
+     @media only screen and (min-width: 850px ){
+       .full_container{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         box-sizing: content-box;
+       }
+
+       .total{
+         width: 40%;
+         margin-top: 2.5%;
+       
+       }
+      
+
+       .body_1{
+         margin-right: 10%;
+        
+       }
+
+       h1{
+         font-size: 55px;
+       }
+
+       .top{
+       background-color: hsl(248, 32%,49%);
+       text-align: center;
+       width: 103%;
+       box-shadow: 0 5px rgba(0, 0, 0, 0.4);
+       border-radius: 0.3em;
+       padding: 0.5% 0;
+       margin: 3% 0;
+       
+      
+       
+       }
+
+       .top h2{
+         text-align: center;
+         font-size: 25px;
+       }
+       
+
+     form{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        width:95%;
+        padding: 5% 4%;
+        border-radius: 0.3em;
+        box-shadow: 0 5px rgba(0, 0, 0, 0.4);
+        align-items: center;
+        justify-content: center;
+       
+        
+      }
+
+      form input{
+        outline:none;
+        margin: 2% 3%;
+        width: 90%;
+        padding: 3% 3%;
+        border-radius: 0.3em;
+        border: 1px solid grey;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      a{
+        background-color: hsl(154, 59%, 51%);
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        padding: 15px 15px;
+        margin: 0 10px;
+        border-radius: 0.3em;
+        width: 90%;
+      }
+     }
+
+     @media only screen and (max-width: 850px){
+       .full_container{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content:center;
+         box-sizing:content-box;
+         font-size: 14px;
+         margin: 10vh 0;
+         
+       }
+       .total{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         box-sizing: content-box;
+       }
+
+       h1{
+         text-align: center;
+         font-weight: 700;
+       }
+       p{
+         text-align: center;
+         padding: 0 10%;
+       }
+      
+       .top{
+       background-color: hsl(248, 32%,49%);
+       width: 80vw;
+       border-radius: 0.4em;
+       box-shadow: 2px 7px rgba(0, 0, 0, 0.4);
+       text-align: center;
+       margin: 5% 0%;
+       padding:0;
+
+       
+     }
+
+     form{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        width:80vw;
+        padding: 4% 5%;
+        border-radius: 0.4em;
+        box-shadow: 2px 7px rgba(0, 0, 0, 0.4);
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        
+       
+        
+      }
+
+      form input{
+        outline:none;
+        margin: 3% 3%;
+        width: 95%;
+        padding: 3% 5%;
+        border-radius: 0.4em;
+        border: 1px solid grey;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      a{
+        background-color: hsl(154, 59%, 51%);
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        padding: 3% 5%;
+        margin: 0 5%;
+        border-radius: 0.4em;
+        width: 95%;
+        box-shadow: 2px 5px rgba(0, 0, 0, 0.4);
+      }
+     }
+
+
+  </style>
+</head>
+<body>
+<div class="full_container">
+  <div class="body_1">
+    
+      <h1 class="body_head">Learn to code by<br> watching others</h1>
+      <p style="font-weight:100;">See how experienced developers solve problem in real-time.<br>Watching scripted tutorials is great, but understanding how<br>developers think is invaluable.</p>
+    
+  </div>   
+  
+  <div class="total">
+    <div class="top">
+      <h2>
+        <b>Try it free 7 days</b> <span style="font-weight:300;">then $20/mo. thereafter</span>
+      </h2>
+    </div>
+      <div class="container">
+       
+        <form>
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+          <input type="email" placeholder="Email Address">
+          <input type="password" placeholder="Password">
+          <a href="#">CLAIM YOUR FREE TRIAL</a>
+          <h2 style="color: darkgray; font-size: 10px; text-align: center;">By clicking the Button, you are agreeing to our <span style="color: red; font-size: 10px;">Terms and Services</span></h2>
+        </form>
+        
+      </div>
+  </div>
+</div>
+  
+  
+</body>
+</html>
