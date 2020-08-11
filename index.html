@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   
+
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Challenge 1</title>
@@ -27,12 +28,13 @@
         border:1px solid blue;
       }
 
-     
-     
-     a:active{
-       background-color: hsl(154, 34%, 65%);
+     button:active{
+      background-color: hsl(154, 63%, 57%);
+      border:none;
      }
-
+     
+     
+     
      
      
      @media only screen and (min-width: 850px ){
@@ -45,16 +47,28 @@
 
        .total{
          width: 40%;
-         margin-top: 2.5%;
-       
+         margin: 2.5% 0;
+        
        }
-      
+       small{
+       position: relative;
+       left:33%;
+
+     }
+     #no_4{
+       padding-bottom: 10px;
+     }
 
        .body_1{
          margin-right: 10%;
         
        }
-
+       #error-icon_1,#error-icon_2,#error-icon_3,#error-icon_4{
+       position: relative;
+       bottom:45px;
+       left:225px;
+       display: none;
+     }
        h1{
          font-size: 55px;
        }
@@ -101,18 +115,19 @@
         border: 1px solid grey;
         font-family: 'Poppins', sans-serif;
       }
-
-      a{
+      
+      button{
         background-color: hsl(154, 59%, 51%);
         text-decoration: none;
         color: white;
         text-align: center;
         padding: 15px 15px;
-        margin: 0 10px;
+        margin: 0 ;
         border-radius: 0.3em;
         width: 90%;
+        border: none;
       }
-     }
+     } 
 
      @media only screen and (max-width: 850px){
        .full_container{
@@ -133,6 +148,20 @@
          box-sizing: content-box;
        }
 
+       small{
+       position: relative;
+       left:26%;
+
+     }
+     #error-icon_1,#error-icon_2,#error-icon_3,#error-icon_4{
+       position: relative;
+       bottom:38px;
+       left:125px;
+       display: none;
+     }
+     #no_4{
+       padding-bottom: 10px;
+     }
        h1{
          text-align: center;
          font-weight: 700;
@@ -179,8 +208,9 @@
         border: 1px solid grey;
         font-family: 'Poppins', sans-serif;
       }
+      
 
-      a{
+      button{
         background-color: hsl(154, 59%, 51%);
         text-decoration: none;
         color: white;
@@ -190,8 +220,9 @@
         border-radius: 0.4em;
         width: 90%;
         box-shadow: 2px 5px rgba(0, 0, 0, 0.4);
+        border:none;
       }
-     }
+    }
 
 
   </style>
@@ -201,6 +232,7 @@
   <div class="body_1">
     
       <h1 class="body_head">Learn to code by<br> watching others</h1>
+      
       <p style="font-weight:100;">See how experienced developers solve problem in real-time.<br>Watching scripted tutorials is great, but understanding how<br>developers think is invaluable.</p>
     
   </div>   
@@ -213,19 +245,97 @@
     </div>
       <div class="container">
        
-        <form>
-          <input type="text" placeholder="First Name">
-          <input type="text" placeholder="Last Name">
-          <input type="email" placeholder="Email Address">
-          <input type="password" placeholder="Password">
-          <a href="#">CLAIM YOUR FREE TRIAL</a>
+        <form id="form">
+
+            <input type="text" placeholder="First Name" id="firstname"><img src="images/icon-error.svg" alt="error-icon" id="error-icon_1" />
+            <small style="color: red;" id="no_1"></small>
+            <input type="text" placeholder="Last Name" id="lastname"><img src="images/icon-error.svg" alt="error-icon" id="error-icon_2" />
+            <small style="color: red;" id="no_2"></small>
+            <input type="email" placeholder="Email Address" id="email"><img src="images/icon-error.svg" alt="error-icon" id="error-icon_3" />
+            <small style="color: red;" id="no_3"></small>
+            <input type="password" placeholder="Password" id="password"><img src="images/icon-error.svg" alt="error-icon" id="error-icon_4" />
+            <small style="color: red;" id="no_4"></small>
+          <button id="button" >CLAIM YOUR FREE TRIAL</button>
           <h2 style="color: darkgray; font-size: 10px; text-align: center;">By clicking the Button, you are agreeing to our <span style="color: red; font-size: 10px;">Terms and Services</span></h2>
         </form>
         
       </div>
   </div>
 </div>
-  
+  <script>
+    var buttn= document.getElementById("button")
+    buttn.addEventListener("click", e => {
+      e.preventDefault();
+      
+      var fname= document.getElementById("firstname")
+      var lname= document.getElementById("lastname")
+      var email= document.getElementById("email")
+      var pass= document.getElementById("password")
+
+      if(fname.value===""){
+        console.log("no fname");
+        sendError("no_1", "please enter the first name")
+        document.getElementById("error-icon_1").style.display="block"
+        fname.style.border="thin solid red"
+      }
+      else if (fname.value.length>0){
+        console.log("error fname")
+        deleteError("no_1", "")
+        document.getElementById("error-icon_1").style.display="none"
+        fname.style.border="thin solid grey"
+      }
+      if(lname.value===""){
+        console.log("no lname");
+        sendError("no_2", "please enter the last name")
+        lname.style.border="thin solid red"
+        document.getElementById("error-icon_2").style.display="block"
+      }
+      else if (lname.value.length>0){
+        console.log("error lname")
+        deleteError("no_2", "")
+        lname.style.border="thin solid grey"
+        document.getElementById("error-icon_2").style.display="none"
+      }
+      if(email.value===""){
+        console.log("no email");
+        sendError("no_3", "please enter your email")
+        email.style.border="thin solid red"
+        document.getElementById("error-icon_3").style.display="block"
+      }
+      else if ( email.value.indexOf("@")===-1){
+        sendError("no_3","this is not email format")
+        email.style.border="thin solid red"
+        document.getElementById("error-icon_3").style.display="block"
+      }
+      else if(email.value.length>0){
+        deleteError("no_3", "")
+        email.style.border="thin solid grey"
+        document.getElementById("error-icon_3").style.display="none"
+      }
+      if(pass.value===""){
+        console.log("no pass");
+        sendError("no_4", "Please enter a Password")
+        pass.style.border="thin solid red"
+        document.getElementById("error-icon_4").style.display="block"
+      }
+      else if (pass.value.length>0){
+        deleteError("no_4", "")
+        pass.style.border="thin solid grey"
+        document.getElementById("error-icon_4").style.display="none"
+      }
+
+    })
+
+    function sendError(a,b){
+      var smll= document.getElementById(a);
+      smll.innerHTML=b;
+    }
+
+    function deleteError(a,b){
+      var smll=document.getElementById(a);
+      smll.innerHTML=b;
+    }
+  </script>
   
 </body>
 </html>
